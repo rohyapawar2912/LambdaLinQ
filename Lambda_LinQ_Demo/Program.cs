@@ -11,6 +11,8 @@ namespace Lambda_LinQ_Demo
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello, World!");
+            Management managment = new Management();
             List<ProductReview> list = new List<ProductReview>();
             {
                 new ProductReview() { ProductID = 1, UserID = 1, Rating = 5, Review = "Average", IsLike = true };
@@ -43,7 +45,25 @@ namespace Lambda_LinQ_Demo
                 new ProductReview() { ProductID = 28, UserID = 28, Rating = 4, Review = "VeryNice", IsLike = true };
 
 
+            };
+            Console.WriteLine("1-Top three rating");
+            Console.WriteLine("2 -Product Review");
+            int op = Convert.ToInt32(Console.ReadLine());
+            switch (op)
+            {
+                case 1:
+
+                    managment.TopRecord(list);
+                    break;
+                case 2:
+                    managment.Productreview(list);
+                    break;
+                default:
+                    break;
             }
+
+
+
         }
     }
 }
